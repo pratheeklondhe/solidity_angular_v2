@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import * as factory from "../campaignFactory";
+import factory from "../campaignFactory";
 
 @Component({
   selector: "app-root",
@@ -10,7 +10,7 @@ export class AppComponent {
   title = "CodeSandbox";
 
   async xyz() {
-    // const campaigns = await factory.methods.getDeployedCampaigns().call({});
-    // console.log(Object.keys(factory));
+    const campaigns = await factory.methods.getDeployedCampaigns().call({});
+    console.log(factory, campaigns);
   }
 }
