@@ -6,6 +6,4 @@ const CampaignFactoryInstance = new web3.eth.Contract(
   "0x68F4D7e49595Aa7B66CdA8ce9b32D8e6FF362207"
 );
 
-console.log("fdsfdsfds", CampaignFactoryInstance);
-
 export default CampaignFactoryInstance;

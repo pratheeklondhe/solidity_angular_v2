@@ -13,4 +13,6 @@ export class AppComponent {
     const campaigns = await factory.methods.getDeployedCampaigns().call({});
     console.log(factory, campaigns);
   }
+
+  createCampaign() {}
 }
