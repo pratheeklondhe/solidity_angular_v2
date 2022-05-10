@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import factory from "../campaignFactory";
 import web3 from "../web3";
+// import { MatCardModule } from "@angular/material/card";
 
 @Component({
   selector: "app-root",
@@ -15,11 +16,11 @@ export class AppComponent {
   async ngOnInit() {
     this.accounts = await web3.eth.requestAccounts();
     console.log(this.accounts);
+    this.getDeployedCampaigns();
   }
 
   async getDeployedCampaigns() {
     this.campaigns = await factory.methods.getDeployedCampaigns().call({});
-    console.log(this.campaigns);
   }
 
   async createCampaign() {
