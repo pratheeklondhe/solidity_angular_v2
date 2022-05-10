@@ -1,6 +1,0 @@
-{
-  "infiniteLoopProtection": true,
-  "hardReloadOnChange": false,
-  "disableLogging": false,
-  "template": "node"
-}
