@@ -4,21 +4,12 @@
     Welcome to {{ title }}!
   </h1>
 
-  <button (click)="createCampaign()">Create Campaign</button>
+  <p-button label="Create Campaign" (click)="createCampaign()"></p-button>
 
   <p-card *ngFor="let campaign of campaigns;let i=index">
     {{i+1}} {{campaign}}
     <ng-template pTemplate="header">
       Header content here
     </ng-template>
-
-    <!-- <p-card-header>fdsfdsfds</p-card-header> -->
-
-    <!-- <section class="example-section">
-      <mat-checkbox class="example-margin">Check me!</mat-checkbox>
-      <mat-checkbox class="example-margin" [disabled]="true"
-        >Disabled</mat-checkbox
-      >
-    </section> -->
   </p-card>
 </div>
