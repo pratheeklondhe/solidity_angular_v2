@@ -8,7 +8,12 @@
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "prefix": "app",
-      "styles": ["styles.css"],
+      "styles": [
+        "styles.css",
+        "node_modules/primeng/resources/themes/saga-blue/theme.css",
+        "node_modules/primeng/resources/primeng.min.css",
+        "node_modules/primeicons/primeicons.css"
+      ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {

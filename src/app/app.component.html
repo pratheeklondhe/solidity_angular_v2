@@ -6,16 +6,19 @@
 
   <button (click)="createCampaign()">Create Campaign</button>
 
-  <mat-card *ngFor="let campaign of campaigns;let i=index">
+  <p-card *ngFor="let campaign of campaigns;let i=index">
     {{i+1}} {{campaign}}
+    <ng-template pTemplate="header">
+      Header content here
+    </ng-template>
 
-    <mat-card-subtitle>fdsfdsfds</mat-card-subtitle>
+    <!-- <p-card-header>fdsfdsfds</p-card-header> -->
 
-    <section class="example-section">
+    <!-- <section class="example-section">
       <mat-checkbox class="example-margin">Check me!</mat-checkbox>
       <mat-checkbox class="example-margin" [disabled]="true"
         >Disabled</mat-checkbox
       >
-    </section>
-  </mat-card>
+    </section> -->
+  </p-card>
 </div>
