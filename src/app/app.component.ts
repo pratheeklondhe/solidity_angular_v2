@@ -2,7 +2,6 @@ import { Component } from "@angular/core";
 import factory from "../campaignFactory";
 import web3 from "../web3";
 import { MessageService } from "primeng/api";
-import { ToastModule } from "primeng/toast";
 
 @Component({
   selector: "app-root",
@@ -36,9 +35,8 @@ export class AppComponent {
       this.getDeployedCampaigns();
     } catch (e) {
       this.messageService.add({
-        severity: "success",
-        summary: "Service Message",
-        detail: "Via MessageService"
+        severity: "error",
+        summary: "Failed to create Campaign"
       });
     }
   }
