@@ -9,7 +9,13 @@ import web3 from "../../web3";
 })
 export class CampaignComponent implements OnInit {
   id;
+  campaignDetails;
   campaignContract: any;
+  minAmnt;
+  managerAddr;
+  contributorsCount;
+  balance;
+  requestsCount;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.params.subscribe((params: Params) => {
@@ -22,21 +28,20 @@ export class CampaignComponent implements OnInit {
   }
 
   async ngOnInit() {
-    const count = await this.campaignContract.methods.contributorsCount().call({
-      from: window["accounts"][0]
-    });
-
-    const manager = await this.campaignContract.methods.manager().call({
-      from: window["accounts"][0]
-    });
-
-    const isContributor = await this.campaignContract.methods
-      .contributors(window["accounts"][0])
+    // [
+    //   this.minAmnt,
+    //   this.managerAddr,
+    //   this.contributorsCount,
+    //   this.balance,
+    //   this.requestsCount
+    // ]
+    this.campaignDetails = await this.campaignContract.methods
+      .getCampaignDetails()
       .call({
         from: window["accounts"][0]
       });
 
-    console.log(isContributor);
+    console.log(this.campaignDetails[1]);
   }
 
   backToHomePage() {

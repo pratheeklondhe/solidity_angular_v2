@@ -9,6 +9,7 @@ import { ToastModule } from "primeng/toast";
 import { CampaignComponent } from "./campaign/campaign.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HomeComponent } from "./home/home.component";
+import { AvatarModule } from "primeng/avatar";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CampaignComponent],
@@ -18,7 +19,8 @@ import { HomeComponent } from "./home/home.component";
     CardModule,
     ButtonModule,
     ToastModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AvatarModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

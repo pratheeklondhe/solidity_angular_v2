@@ -1,5 +1,23 @@
 <p>{{id}}</p>
 
+<!-- <p-avatar
+  [label]="id"
+  pBadge
+  styleClass="mr-5"
+  value="40"
+  size="xlarge"
+  [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"
+></p-avatar> -->
+
+<div class="row">
+  <div class="col-6">
+    Min Amnt
+  </div>
+  <div class="col-6">
+    {{campaignDetails[0]}}
+  </div>
+</div>
+
 <p-button
   (onClick)="backToHomePage()"
   label="Go Back"
