@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import factory from "../campaignFactory";
 import web3 from "../web3";
 import { MessageService } from "primeng/api";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -13,7 +14,7 @@ export class AppComponent {
   campaigns = [];
   accounts = [];
 
-  constructor(private messageService: MessageService) {}
+  constructor(private router: Router, private messageService: MessageService) {}
 
   async ngOnInit() {
     this.accounts = await web3.eth.requestAccounts();
@@ -39,5 +40,9 @@ export class AppComponent {
         summary: "Failed to create Campaign"
       });
     }
+  }
+
+  viewCampaign() {
+    this.router.navigate(["/camp"]);
   }
 }

@@ -17,6 +17,7 @@
           <strong>{{i+1}})</strong> {{campaign}}
           <ng-template pTemplate="footer">
             <p-button
+              (onClick)="viewCampaign()"
               label="View Campaign"
               styleClass="p-button-secondary"
             ></p-button>
@@ -28,3 +29,4 @@
 </div>
 
 <p-toast position="top-left"></p-toast>
+<router-outlet></router-outlet>
