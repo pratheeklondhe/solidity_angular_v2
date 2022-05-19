@@ -16,13 +16,27 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router, private messageService: MessageService) {}
 
   async ngOnInit() {
-    this.accounts = await web3.eth.requestAccounts();
-    console.log(this.accounts);
-    this.getDeployedCampaigns();
+    try {
+      this.accounts = await web3.eth.requestAccounts();
+      window["accounts"] = this.accounts;
+      this.getDeployedCampaigns();
+    } catch (e) {
+      this.messageService.add({
+        severity: "error",
+        summary: "Failed to get Accounts"
+      });
+    }
   }
 
   async getDeployedCampaigns() {
-    this.campaigns = await factory.methods.getDeployedCampaigns().call({});
+    try {
+      this.campaigns = await factory.methods.getDeployedCampaigns().call({});
+    } catch (e) {
+      this.messageService.add({
+        severity: "error",
+        summary: "Failed to get Campaign"
+      });
+    }
   }
 
   async createCampaign() {
@@ -41,7 +55,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  viewCampaign() {
-    this.router.navigate(["/camp"]);
+  viewCampaign(campaign: string) {
+    this.router.navigate(["/camp", campaign]);
   }
 }
