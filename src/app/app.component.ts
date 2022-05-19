@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import factory from "../campaignFactory";
 import web3 from "../web3";
 import { MessageService } from "primeng/api";
+import { ToastModule } from "primeng/toast";
 
 @Component({
   selector: "app-root",

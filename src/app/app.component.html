@@ -1,15 +1,30 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <h1>
-    Welcome to {{ title }}!
+    Campaign Creations
   </h1>
 
   <p-button label="Create Campaign" (click)="createCampaign()"></p-button>
 
-  <p-card *ngFor="let campaign of campaigns;let i=index">
-    {{i+1}} {{campaign}}
-    <ng-template pTemplate="header">
-      Header content here
-    </ng-template>
-  </p-card>
+  <p>Campaigns</p>
+  <div class="row">
+    <div class="col-12">
+      <div class="m-5">
+        <p-card
+          styleClass="p-card-shadow"
+          *ngFor="let campaign of campaigns;let i=index"
+        >
+          <strong>{{i+1}})</strong> {{campaign}}
+          <ng-template pTemplate="footer">
+            <p-button
+              label="View Campaign"
+              styleClass="p-button-secondary"
+            ></p-button>
+          </ng-template>
+        </p-card>
+      </div>
+    </div>
+  </div>
 </div>
+
+<p-toast position="top-left"></p-toast>
