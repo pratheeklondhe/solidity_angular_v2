@@ -13,8 +13,8 @@
   <div class="col-6">
     Min Amnt
   </div>
-  <div class="col-6">
-    {{campaignDetails[0]}}
+  <div *ngIf="campaignDetails" class="col-6">
+    {{campaignDetails[0]}} - {{campaignDetails[1]}}- {{campaignDetails[2]}}
   </div>
 </div>
 

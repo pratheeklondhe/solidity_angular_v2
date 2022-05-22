@@ -41,7 +41,7 @@ export class CampaignComponent implements OnInit {
         from: window["accounts"][0]
       });
 
-    console.log(this.campaignDetails[1]);
+    console.log(this.campaignDetails);
   }
 
   backToHomePage() {
