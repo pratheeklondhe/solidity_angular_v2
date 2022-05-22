@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     try {
       this.accounts = await web3.eth.requestAccounts();
+      console.log(this.accounts);
       window["accounts"] = this.accounts;
       this.getDeployedCampaigns();
     } catch (e) {

@@ -1,25 +1,53 @@
-<p>{{id}}</p>
-
-<!-- <p-avatar
-  [label]="id"
-  pBadge
-  styleClass="mr-5"
-  value="40"
-  size="xlarge"
-  [style]="{'background-color': '#4caf4f', 'color': '#ffffff'}"
-></p-avatar> -->
-
-<div class="row">
-  <div class="col-6">
-    Min Amnt
-  </div>
-  <div *ngIf="campaignDetails" class="col-6">
-    {{campaignDetails[0]}} - {{campaignDetails[1]}}- {{campaignDetails[2]}}
-  </div>
-</div>
-
 <p-button
   (onClick)="backToHomePage()"
   label="Go Back"
   styleClass="p-button-secondary"
 ></p-button>
+
+<div class="row" *ngIf="campaignDetails">
+  <div class="col-6">
+    Min Amnt (Wei)
+  </div>
+  <div class="col-6">
+    {{campaignDetails[0]}}
+  </div>
+
+  <div class="col-6">
+    Manager
+  </div>
+  <div class="col-6">
+    {{campaignDetails[1]}}
+  </div>
+
+  <div class="col-6">
+    No of Contributors
+  </div>
+  <div class="col-6">
+    {{campaignDetails[2]}}
+  </div>
+
+  <div class="col-6">
+    Contract Balance
+  </div>
+  <div class="col-6">
+    {{campaignDetails[3]}}
+  </div>
+
+  <div class="col-6">
+    No of Requests
+  </div>
+  <div class="col-6">
+    {{campaignDetails[4]}}
+  </div>
+
+  <div class="col-6">
+    &nbsp;
+  </div>
+  <div class="col-6">
+    <p-button
+      (onClick)="addContributor(campaignDetails[0])"
+      label="Be a Contribtor (Min: {{campaignDetails[0]}} Wei)"
+      styleClass="p-button-primary"
+    ></p-button>
+  </div>
+</div>
