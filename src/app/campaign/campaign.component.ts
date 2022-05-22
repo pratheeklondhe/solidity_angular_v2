@@ -36,7 +36,7 @@ export class CampaignComponent implements OnInit {
     this.campaignDetails = await this.campaignContract.methods
       .getCampaignDetails()
       .call({
-        from: window["accounts"][]
+        from: window["accounts"][0]
       });
 
     console.log(this.campaignDetails);

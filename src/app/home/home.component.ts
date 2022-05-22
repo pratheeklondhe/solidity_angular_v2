@@ -17,8 +17,18 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
     try {
-      this.accounts = await web3.eth.requestAccounts();
-      console.log(this.accounts);
+      this.accounts = await web3.eth.getAccounts();
+      let accounts;
+      if (typeof window["ethereum"] !== "undefined") {
+        // connects to MetaMask
+        accounts = await window["ethereum"].request({
+          method: "eth_requestAccounts"
+        });
+      } else {
+        // tell the user to install an `ethereum` provider extension
+      }
+
+      console.log(this.accounts, accounts);
       window["accounts"] = this.accounts;
       this.getDeployedCampaigns();
     } catch (e) {
